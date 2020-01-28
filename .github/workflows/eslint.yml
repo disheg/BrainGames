@@ -1,12 +1,24 @@
-name: Lint
+name: Node CI
 
-on: [push]
+on:
+  - push
 
 jobs:
-  eslint:
+  build:
+
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [13.x]
+
     steps:
+      - uses: actions/checkout@v1
+        with:
+          node-version: ${{ matrix.node-version }}
       - name: Eslint
-        uses: actions/checkout@v2
-      - name: Run Eslint
-        run: npx eslint .
+        run: 
+          make lint
+
+        env:
+          CI: true
