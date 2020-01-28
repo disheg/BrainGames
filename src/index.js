@@ -2,9 +2,7 @@ import readlineSync from 'readline-sync';
 
 const userName = () => {
   const name = readlineSync.question('Your answer: ');
-  return name;
-  
-       
+  return name;  
 };
 
 export default userName;
