@@ -1,0 +1,12 @@
+name: Lint
+
+on: [push]
+
+jobs:
+  eslint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Eslint
+        uses: actions/checkout@v2
+      - name: Run Eslint
+        run: npx eslint .
