@@ -8,4 +8,4 @@ jobs:
     steps:
       - uses: ../Makefile
       - name: Run Eslint
-        run: make lint
+        run: npx eslint .
