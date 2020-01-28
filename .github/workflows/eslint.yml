@@ -1,4 +1,4 @@
-name: esplint
+name: eslint
 on:
   - push
   
