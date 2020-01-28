@@ -6,6 +6,6 @@ jobs:
   eslint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: ../Makefile
       - name: Run Eslint
         run: make lint
