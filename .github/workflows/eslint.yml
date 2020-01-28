@@ -6,6 +6,5 @@ jobs:
   eslint:
     runs-on: ubuntu-latest
     steps:
-      - uses: ../Makefile
       - name: Run Eslint
         run: npx eslint .
