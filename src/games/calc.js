@@ -12,7 +12,7 @@ const exp = ['*', '-', '+'];
 const brainCalc = () => {
   const numberOne = randomInteger(1, 100);
   const numberTwo = randomInteger(1, 100);
-  const expRand = exp[randomInteger(1, 3) - 1];
+  let expRand = exp[randomInteger(1, 3) - 1];
   let correctAnswer;
 
   switch (expRand) {
@@ -25,6 +25,9 @@ const brainCalc = () => {
     case '+':
       correctAnswer = numberOne + numberTwo;
       break;
+    default:
+      expRand = '+';
+      correctAnswer = numberOne + numberTwo;
   }
 
   const question = `${numberOne} ${expRand} ${numberTwo}`;
