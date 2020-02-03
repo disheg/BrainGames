@@ -1,2 +1,3 @@
 <a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a><br>
 <img src="https://github.com/disheg/frontend-project-lvl1/workflows/eslint/badge.svg" />
+<script id="asciicast-yM2Q5c8N6Rgb8bYQXzN0Y8PsC" src="https://asciinema.org/a/yM2Q5c8N6Rgb8bYQXzN0Y8PsC.js" async></script>
