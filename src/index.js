@@ -6,6 +6,8 @@ const userName = () => {
   return name;
 };
 
+const numberOfQuestions = 3;
+
 const greeting = (description, brainGames) => {
   console.log('Welcome to the Brain-games!\n');
   const name = userName();
@@ -26,7 +28,7 @@ const greeting = (description, brainGames) => {
 
     return question(cor - 1);
   };
-  return question(3);
+  return question(numberOfQuestions);
 };
 
 export default greeting;
