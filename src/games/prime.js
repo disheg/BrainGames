@@ -1,10 +1,6 @@
 import { cons } from '@hexlet/pairs';
 import greeting from '..';
-
-const randomInteger = (min, max) => {
-  const rand = min + Math.random() * (max + 1 - min);
-  return Math.floor(rand);
-};
+import randomInteger from './utils.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 

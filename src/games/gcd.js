@@ -1,16 +1,14 @@
 import { cons } from '@hexlet/pairs';
 import greeting from '..';
+import randomInteger from './utils.js';
 
-const randomInteger = (min, max) => {
-  const rand = min + Math.random() * (max + 1 - min);
-  return Math.floor(rand);
-};
-
-const NOD = (numberOne, numberTwo) => {
-  if (numberTwo > numberOne) return NOD(numberTwo, numberOne);
-  if (!numberTwo) return numberOne;
-  return NOD(numberTwo, numberOne % numberTwo);
-};
+function gcd_rec(a, b) {
+    if (b) {
+        return gcd_rec(b, a % b);
+    } else {
+        return Math.abs(a);
+    }
+}
 
 const description = 'Find the greatest common divisor of given numbers.';
 
@@ -18,7 +16,7 @@ const brainGCD = () => {
   const numberOne = randomInteger(1, 100);
   const numberTwo = randomInteger(1, 100);
   const question = `${numberOne} ${numberTwo}`;
-  const correctAnswer = NOD(numberOne, numberTwo);
+  const correctAnswer = gcd_rec(numberOne, numberTwo);
 
   const pair = cons(question, correctAnswer);
   return pair;

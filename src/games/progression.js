@@ -1,14 +1,11 @@
 import { cons } from '@hexlet/pairs';
 import greeting from '..';
+import randomInteger from './utils.js';
 
-const randomInteger = (min, max) => {
-  const rand = min + Math.random() * (max + 1 - min);
-  return Math.floor(rand);
-};
-
+const progressionLength = 10;
 const randomProg = () => {
   const arr = [];
-  let randomInt = randomInteger(1, 10);
+  let randomInt = randomInteger(1, progressionLength);
   const prog = randomInteger(1, 5);
   for (let i = 0; i < 10; i += 1) {
     arr.push(randomInt);
@@ -22,17 +19,10 @@ const description = 'What number is missing in the progression?';
 
 const brainProg = () => {
   const arr = randomProg();
-  const randomHideElement = randomInteger(1, 10) - 1;
+  const randomHideElement = randomInteger(1, progressionLength) - 1;
   const correctAnswer = arr[randomHideElement];
-  let question = '';
-
-  for (let i = 0; i < arr.length; i += 1) {
-    let newInd = arr[i];
-    if (arr[i] === correctAnswer) {
-      newInd = '.. ';
-    }
-    question += `${newInd} `;
-  }
+  arr[randomHideElement] = '..';
+  let question = arr.join(' ');
 
   const pair = cons(question, correctAnswer);
   return pair;

@@ -1,34 +1,32 @@
 import { cons } from '@hexlet/pairs';
 import greeting from '..';
-
-const randomInteger = (min, max) => {
-  const rand = min + Math.random() * (max + 1 - min);
-  return Math.floor(rand);
-};
+import randomInteger from './utils.js';
 
 const description = 'What is the result of the expression?';
-const exp = ['*', '-', '+'];
+const expCount = ['*', '-', '+'];
+
+const mathOperation = (numberOne, numberTwo, operation) => {
+  switch (operation) {
+    case '*':
+      return numberOne * numberTwo;
+      break;
+    case '-':
+      return numberOne - numberTwo;
+      break;
+    case '+':
+      return numberOne + numberTwo;
+      break;
+    default:
+      return 'Operation not found';
+  }
+}
 
 const brainCalc = () => {
   const numberOne = randomInteger(1, 100);
   const numberTwo = randomInteger(1, 100);
-  let expRand = exp[randomInteger(1, 3) - 1];
-  let correctAnswer;
+  let expRand = expCount[randomInteger(1, 3) - 1];
+  let correctAnswer = mathOperation(numberOne, numberTwo, expRand);
 
-  switch (expRand) {
-    case '*':
-      correctAnswer = numberOne * numberTwo;
-      break;
-    case '-':
-      correctAnswer = numberOne - numberTwo;
-      break;
-    case '+':
-      correctAnswer = numberOne + numberTwo;
-      break;
-    default:
-      expRand = '+';
-      correctAnswer = numberOne + numberTwo;
-  }
 
   const question = `${numberOne} ${expRand} ${numberTwo}`;
 
