@@ -1,6 +1,6 @@
 import { cons } from '@hexlet/pairs';
 import greeting from '..';
-import randomInteger from './utils.js';
+import randomInteger from './utils';
 
 const isEven = (num) => num % 2 === 0;
 

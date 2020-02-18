@@ -1,6 +1,6 @@
 import { cons } from '@hexlet/pairs';
 import greeting from '..';
-import randomInteger from './utils.js';
+import randomInteger from './utils';
 
 const progressionLength = 10;
 const randomProg = () => {
@@ -22,7 +22,7 @@ const brainProg = () => {
   const randomHideElement = randomInteger(1, progressionLength) - 1;
   const correctAnswer = arr[randomHideElement];
   arr[randomHideElement] = '..';
-  let question = arr.join(' ');
+  const question = arr.join(' ');
 
   const pair = cons(question, correctAnswer);
   return pair;
