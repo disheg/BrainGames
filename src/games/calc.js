@@ -1,11 +1,11 @@
 import { cons } from '@hexlet/pairs';
-import greeting from '..';
-import randomInteger from './utils';
+import runEngine from '..';
+import randomInteger from '../utils';
 
 const description = 'What is the result of the expression?';
-const expCount = ['*', '-', '+'];
+const operations = ['*', '-', '+'];
 
-const mathOperation = (numberOne, numberTwo, operation) => {
+const runOperation = (numberOne, numberTwo, operation) => {
   switch (operation) {
     case '*':
       return numberOne * numberTwo;
@@ -14,19 +14,19 @@ const mathOperation = (numberOne, numberTwo, operation) => {
     case '+':
       return numberOne + numberTwo;
     default:
-      return 'Operation not found';
+      return false;
   }
 };
 
-const brainCalc = () => {
+const runBrainCalc = () => {
   const numberOne = randomInteger(1, 100);
   const numberTwo = randomInteger(1, 100);
-  const expRand = expCount[randomInteger(1, 3) - 1];
-  const correctAnswer = mathOperation(numberOne, numberTwo, expRand);
-  const question = `${numberOne} ${expRand} ${numberTwo}`;
+  const randomOperation = operations[randomInteger(1, 3) - 1];
+  const correctAnswer = runOperation(numberOne, numberTwo, randomOperation);
+  const question = `${numberOne} ${randomOperation} ${numberTwo}`;
 
   const pair = cons(question, correctAnswer);
   return pair;
 };
 
-export default () => greeting(description, brainCalc);
+export default () => runEngine(description, runBrainCalc);
