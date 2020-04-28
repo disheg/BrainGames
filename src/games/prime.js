@@ -1,6 +1,6 @@
 import { cons } from '@hexlet/pairs';
 import runEngine from '..';
-import randomInteger from '../utils';
+import { randomInteger } from '../utils';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -12,12 +12,11 @@ const isPrime = (number) => {
   return true;
 };
 
-const runBrainPrime = () => {
+const genBrainPrime = () => {
   const question = randomInteger(1, 100);
   const correctAnswer = isPrime(question) ? 'yes' : 'no';
 
-  const pair = cons(question, correctAnswer);
-  return pair;
+  return cons(question, correctAnswer);
 };
 
-export default () => runEngine(description, runBrainPrime);
+export default () => runEngine(description, genBrainPrime);

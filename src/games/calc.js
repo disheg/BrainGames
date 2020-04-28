@@ -1,6 +1,6 @@
 import { cons } from '@hexlet/pairs';
 import runEngine from '..';
-import randomInteger from '../utils';
+import { randomInteger } from '../utils';
 
 const description = 'What is the result of the expression?';
 const operations = ['*', '-', '+'];
@@ -18,15 +18,14 @@ const runOperation = (numberOne, numberTwo, operation) => {
   }
 };
 
-const runBrainCalc = () => {
+const genBrainCalc = () => {
   const numberOne = randomInteger(1, 100);
   const numberTwo = randomInteger(1, 100);
-  const randomOperation = operations[randomInteger(1, 3) - 1];
-  const correctAnswer = runOperation(numberOne, numberTwo, randomOperation);
+  const randomOperation = operations[randomInteger(0, operations.length - 1)];
+  const correctAnswer = String(runOperation(numberOne, numberTwo, randomOperation));
   const question = `${numberOne} ${randomOperation} ${numberTwo}`;
 
-  const pair = cons(question, correctAnswer);
-  return pair;
+  return cons(question, correctAnswer);
 };
 
-export default () => runEngine(description, runBrainCalc);
+export default () => runEngine(description, genBrainCalc);

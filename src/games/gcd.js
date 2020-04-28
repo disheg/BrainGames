@@ -1,6 +1,6 @@
 import { cons } from '@hexlet/pairs';
 import runEngine from '..';
-import randomInteger from '../utils';
+import { randomInteger } from '../utils';
 
 function gcdRec(a, b) {
   if (b) return gcdRec(b, a % b);
@@ -9,14 +9,13 @@ function gcdRec(a, b) {
 
 const description = 'Find the greatest common divisor of given numbers.';
 
-const runBrainGCD = () => {
+const genBrainGCD = () => {
   const numberOne = randomInteger(1, 100);
   const numberTwo = randomInteger(1, 100);
   const question = `${numberOne} ${numberTwo}`;
-  const correctAnswer = gcdRec(numberOne, numberTwo);
+  const correctAnswer = String(gcdRec(numberOne, numberTwo));
 
-  const pair = cons(question, correctAnswer);
-  return pair;
+  return cons(question, correctAnswer);
 };
 
-export default () => runEngine(description, runBrainGCD);
+export default () => runEngine(description, genBrainGCD);
