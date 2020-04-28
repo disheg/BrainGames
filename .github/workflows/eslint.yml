@@ -7,11 +7,14 @@ jobs:
     
       runs-on: ubuntu-latest   
        
-      strategy:
-        matrix:
-          node-version: [13.x]    
-      
       steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+      - run: npm install
+      - run: npm test  
+      
       - uses: actions/checkout@v1
       - name: Eslint
         run: 
