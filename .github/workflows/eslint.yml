@@ -14,7 +14,6 @@ jobs:
           node-version: '13.x'
       - run: npm install
       
-      - uses: actions/checkout@v1
       - name: Eslint
         run: 
           make install lint        
