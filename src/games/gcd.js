@@ -9,7 +9,7 @@ function gcdRec(a, b) {
 
 const description = 'Find the greatest common divisor of given numbers.';
 
-const genBrainGCD = () => {
+const genGameData = () => {
   const numberOne = randomInteger(1, 100);
   const numberTwo = randomInteger(1, 100);
   const question = `${numberOne} ${numberTwo}`;
@@ -18,4 +18,4 @@ const genBrainGCD = () => {
   return cons(question, correctAnswer);
 };
 
-export default () => runEngine(description, genBrainGCD);
+export default () => runEngine(description, genGameData);

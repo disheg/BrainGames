@@ -12,11 +12,11 @@ const isPrime = (number) => {
   return true;
 };
 
-const genBrainPrime = () => {
+const genGameData = () => {
   const question = randomInteger(1, 100);
   const correctAnswer = isPrime(question) ? 'yes' : 'no';
 
-  return cons(question, correctAnswer);
+  return cons(String(question), correctAnswer);
 };
 
-export default () => runEngine(description, genBrainPrime);
+export default () => runEngine(description, genGameData);

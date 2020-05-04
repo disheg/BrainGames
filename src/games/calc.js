@@ -5,7 +5,7 @@ import { randomInteger } from '../utils';
 const description = 'What is the result of the expression?';
 const operations = ['*', '-', '+'];
 
-const runOperation = (numberOne, numberTwo, operation) => {
+const calculateOperation = (numberOne, numberTwo, operation) => {
   switch (operation) {
     case '*':
       return numberOne * numberTwo;
@@ -18,14 +18,14 @@ const runOperation = (numberOne, numberTwo, operation) => {
   }
 };
 
-const genBrainCalc = () => {
+const genGameData = () => {
   const numberOne = randomInteger(1, 100);
   const numberTwo = randomInteger(1, 100);
-  const randomOperation = operations[randomInteger(0, operations.length - 1)];
-  const correctAnswer = String(runOperation(numberOne, numberTwo, randomOperation));
-  const question = `${numberOne} ${randomOperation} ${numberTwo}`;
+  const operation = operations[randomInteger(0, operations.length - 1)];
+  const correctAnswer = String(calculateOperation(numberOne, numberTwo, operation));
+  const question = `${numberOne} ${operation} ${numberTwo}`;
 
   return cons(question, correctAnswer);
 };
 
-export default () => runEngine(description, genBrainCalc);
+export default () => runEngine(description, genGameData);

@@ -8,23 +8,26 @@ export default (description, runGame) => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}`);
   console.log(description);
-  const runQuestion = (num) => {
+  const runRound = (num) => {
     if (num === 0) {
       console.log(`Congratulations, ${userName}`);
-      return true;
+      return;
     }
-    const pair = runGame();
-    const question = car(pair);
-    const correctAnswer = cdr(pair);
-    const answer = readlineSync.question(`Question: ${question} \nYour answer: `);
+    const gameData = runGame();
+    const question = car(gameData);
+    const correctAnswer = cdr(gameData);
+    console.log(`Question: ${question}`);
+    const answer = readlineSync.question('Your answer: ');
 
-    if (answer === correctAnswer) console.log('Correct!');
-    else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was ${correctAnswer}. \nLet's try again, ${userName}`);
-      return false;
+    if (answer === correctAnswer) {
+      console.log('Correct!');
+    } else {
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was ${correctAnswer}.`);
+      console.log(`Let's try again, ${userName}`);
+      return;
     }
 
-    return runQuestion(num - 1);
+    runRound(num - 1);
   };
-  runQuestion(numberOfQuestions);
+  runRound(numberOfQuestions);
 };

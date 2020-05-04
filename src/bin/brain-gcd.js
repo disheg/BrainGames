@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import genBrainGCD from '../games/gcd';
+import runBrainGCD from '../games/gcd';
 
-genBrainGCD();
+runBrainGCD();
