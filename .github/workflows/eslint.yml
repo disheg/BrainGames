@@ -17,6 +17,7 @@ jobs:
       - name: Eslint
         run: 
           make install lint
+        run:
           make build   
         
         env:
