@@ -12,7 +12,6 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '13.x'
-      - run: npm install
       
       - name: Eslint
         run: 
