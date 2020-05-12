@@ -1,6 +1,6 @@
 import { cons } from '@hexlet/pairs';
 import runEngine from '..';
-import { randomInteger } from '../utils';
+import randomInteger from '../utils';
 
 function gcdRec(a, b) {
   if (b) return gcdRec(b, a % b);

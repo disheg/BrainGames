@@ -1,6 +1,6 @@
 import { cons } from '@hexlet/pairs';
 import runEngine from '..';
-import { randomInteger } from '../utils';
+import randomInteger from '../utils';
 
 const randomProgression = (progressionLength, startValueProgression, progressionDiff) => {
   const arr = [];

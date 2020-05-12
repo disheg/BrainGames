@@ -1,6 +1,6 @@
 import { cons } from '@hexlet/pairs';
 import runEngine from '..';
-import { randomInteger } from '../utils';
+import randomInteger from '../utils';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
