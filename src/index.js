@@ -3,7 +3,7 @@ import { car, cdr } from '@hexlet/pairs';
 
 const numberOfQuestions = 3;
 
-export default (description, runGame) => {
+export default (description, genGameData) => {
   console.log('Welcome to the Brain-games!\n');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}`);
@@ -13,7 +13,7 @@ export default (description, runGame) => {
       console.log(`Congratulations, ${userName}`);
       return;
     }
-    const gameData = runGame();
+    const gameData = genGameData();
     const question = car(gameData);
     const correctAnswer = cdr(gameData);
     console.log(`Question: ${question}`);

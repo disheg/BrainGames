@@ -3,7 +3,6 @@ import runEngine from '..';
 import randomInteger from '../utils';
 
 const isEven = (num) => num % 2 === 0;
-
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const genGameData = () => {
